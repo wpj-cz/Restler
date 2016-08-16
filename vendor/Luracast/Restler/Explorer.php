@@ -205,7 +205,7 @@ class Explorer implements iProvideMultiVersionApi
         foreach ($map as $path => $data) {
             $route = $data[0]['route'];
             $access = $data[0]['access'];
-            if ($access && !Text::contains($path, '{')) {
+            if ((!static::$hideProtected || $access) && !Text::contains($path, '{')) {
                 $r[] = array(
                     'path' => empty($path) ? '/root' : "/$path",
                     //'description' => ''

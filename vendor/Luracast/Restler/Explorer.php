@@ -545,7 +545,7 @@ class Explorer implements iProvideMultiVersionApi
         return $method;
     }
 
-    private function nameModel(array $route)
+    protected function nameModel(array $route)
     {
         static $hash = array();
         $count = 1;
